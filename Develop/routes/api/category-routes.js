@@ -20,14 +20,14 @@ router.get('/:id', async (req, res) => {
   // be sure to include its associated Products
     // console.log('Hello')
 
-  const byID = await Category.findOne({
+  const findCategoryByID = await Category.findOne({
     where: {
       id: req.params.id
     },
     include:
     [Product]
   })
-res.json(byID);
+res.json(findCategoryByID);
 
 });
 
@@ -44,24 +44,24 @@ res.json(createNewCategory);
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
     // console.log('Hello')
-  const categoryUpdate = await Category.update(req.body, {
+  const categoryUpdateByID = await Category.update(req.body, {
     where:{
       id: req.params.id
     }
   })
-res.json(categoryUpdate);
+res.json(categoryUpdateByID);
 
 });
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
     // console.log('Hello')
-    const categoryDelete = await Category.destroy({
+    const categoryDeleteByID = await Category.destroy({
       where:{
         id: req.params.id
       }
     })
-res.json(categoryDelete);
+res.json(categoryDeleteByID);
 
 });
 
