@@ -16,7 +16,8 @@ Tag.init(
     },
     // Tag name with datatype string
     tag_name:{
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      allowNull: false
     }
   },
   {
